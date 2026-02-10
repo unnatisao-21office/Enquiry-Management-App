@@ -1,0 +1,57 @@
+{
+  "employee": [
+    {
+      "enquiryId": 0,
+      "customerName": "string",
+      "customerEmail": "string",
+      "customerPhone": "string",
+      "message": "string",
+      "categoryId": 0,
+      "statusId": 0,
+      "enquiryType": "string",
+      "isConverted": false,
+      "enquiryDate": "2026-02-10T05:36:50.250Z",
+      "followUpDate": "2026-02-10T05:36:50.250Z",
+      "feedback": "string"
+    }
+  ],
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryName": "Cloud Services",
+      "isActive": true
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Hosting",
+      "isActive": true
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Software Development",
+      "isActive": true
+    }
+  ],
+  "status": [
+    {
+      "statusId": 1,
+      "statusName": "new",
+      "isActive": true
+    },
+    {
+      "statusId": 2,
+      "statusName": "In Progress",
+      "isActive": true
+    },
+    {
+      "statusId": 3,
+      "statusName": "Follow Up Needed",
+      "isActive": true
+    },
+    {
+      "statusId": 4,
+      "statusName": "Order Created",
+      "isActive": true
+    }
+  ]
+}
