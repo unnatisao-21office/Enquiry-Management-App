@@ -30,7 +30,7 @@ ngOnInit(): void {
 getStatus() {
   this.masterService.getAllStatus().subscribe({
     next: (res: IStatusModel[]) => {
-      this.statusList.set(res);
+      this.statusList.set(res):
     }
   });
 }
