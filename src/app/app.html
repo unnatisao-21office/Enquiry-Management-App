@@ -2,7 +2,6 @@
   <div class="mx-auto max-w-7xl px-4">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center gap-3">
-        
         <a
           routerLink="/"
           class="text-lg font-semibold tracking-wide text-white"
@@ -11,7 +10,7 @@
         </a>
       </div>
 
-      <ul class="flex flex-wrap items-center gap-2">
+      <ul class="hidden flex-wrap items-center gap-2 md:flex">
         <li>
           <a
             routerLink="home"
@@ -69,6 +68,68 @@
           </a>
         </li>
       </ul>
+
+      <details class="group relative md:hidden">
+        <summary class="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+          <span>Menu</span>
+          <svg
+            class="h-4 w-4 transition group-open:rotate-180"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.2l3.71-3.97a.75.75 0 1 1 1.08 1.04l-4.25 4.55a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </summary>
+        <div class="absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 shadow-xl backdrop-blur">
+          <a
+            routerLink="home"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Home
+          </a>
+          <a
+            routerLink="dashboard"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Dashboard
+          </a>
+          <a
+            routerLink="enquiry-category"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Enquiry Category
+          </a>
+          <a
+            routerLink="enquiry-list"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Enquiry List
+          </a>
+          <a
+            routerLink="enquiry-status"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Enquiry Status
+          </a>
+          <a
+            routerLink="submit-enquiry"
+            class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
+          >
+            Submit Enquiry
+          </a>
+          <a
+            routerLink="login"
+            class="mt-1 block rounded-xl bg-white/10 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white/20"
+          >
+            Login
+          </a>
+        </div>
+      </details>
     </div>
   </div>
 </nav>

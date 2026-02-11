@@ -12,46 +12,69 @@
       "isConverted": false,
       "enquiryDate": "2026-02-10T05:36:50.250Z",
       "followUpDate": "2026-02-10T05:36:50.250Z",
-      "feedback": "string"
+      "feedback": "string",
+      "id": "2135"
+    },
+    {
+      "id": "8844",
+      "enquiryId": 1,
+      "customerName": "Unnati Sao",
+      "customerEmail": "unnati.sao123@.com",
+      "customerPhone": "2212121212",
+      "message": "i am converted to customer",
+      "categoryId": "3",
+      "statusId": "2",
+      "enquiryType": "Service",
+      "isConverted": true,
+      "enquiryDate": "2026-02-12T10:51",
+      "followUpDate": "2026-02-14T10:51",
+      "feedback": "i am converted to customer"
     }
   ],
   "categories": [
     {
       "categoryId": 1,
       "categoryName": "Cloud Services",
-      "isActive": true
+      "isActive": true,
+      "id": "1962"
     },
     {
       "categoryId": 2,
       "categoryName": "Hosting",
-      "isActive": true
+      "isActive": true,
+      "id": "3644"
     },
     {
       "categoryId": 3,
       "categoryName": "Software Development",
-      "isActive": true
+      "isActive": true,
+      "id": "5087"
     }
   ],
   "status": [
     {
       "statusId": 1,
       "statusName": "new",
-      "isActive": true
+      "isActive": true,
+      "id": "662d"
     },
     {
       "statusId": 2,
       "statusName": "In Progress",
-      "isActive": true
+      "isActive": true,
+      "id": "f68d"
     },
     {
       "statusId": 3,
       "statusName": "Follow Up Needed",
-      "isActive": true
+      "isActive": true,
+      "id": "3d19"
     },
     {
       "statusId": 4,
       "statusName": "Order Created",
-      "isActive": true
+      "isActive": true,
+      "id": "6a8c"
     }
   ]
 }
