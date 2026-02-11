@@ -1,0 +1,9 @@
+.home-page {
+	position: relative;
+	min-height: calc(100vh - 64px);
+	background: radial-gradient(circle at top, rgba(34, 211, 238, 0.25), transparent 55%),
+		radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.3), transparent 50%),
+		linear-gradient(135deg, #0b1020 0%, #0f172a 50%, #111827 100%);
+	font-family: "Work Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	overflow: hidden;
+}

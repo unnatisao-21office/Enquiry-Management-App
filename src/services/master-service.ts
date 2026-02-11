@@ -20,4 +20,12 @@ export class MasterService {
   saveEnquiry(obj: any) {
     return this.http.post("http://localhost:3000/employee", obj);  
   }
+
+  getAllEnquiries() {
+    return this.http.get("http://localhost:3000/employee");
+  }
+
+  deleteEnquiry(id: string) {
+    return this.http.delete(`http://localhost:3000/employee/${id}`);
+  }
 }
