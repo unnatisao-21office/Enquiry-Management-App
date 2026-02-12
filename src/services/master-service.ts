@@ -13,12 +13,12 @@ export class MasterService {
     return this.http.get<IStatusModel[]>("http://localhost:3000/status");
   }
 
-  getAllCategory(){
+  getAllCategory() {
     return this.http.get<ICategoryModel[]>("http://localhost:3000/categories");
   }
-  
+
   saveEnquiry(obj: any) {
-    return this.http.post("http://localhost:3000/employee", obj);  
+    return this.http.post("http://localhost:3000/employee", obj);
   }
 
   getAllEnquiries() {

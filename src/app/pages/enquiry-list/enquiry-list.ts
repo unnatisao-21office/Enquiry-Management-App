@@ -10,36 +10,36 @@ import { MasterService } from '../../../services/master-service';
 })
 export class EnquiryList implements OnInit {
 
-masterservice= inject(MasterService);
+  masterservice = inject(MasterService);
 
-getAllEnquiriesList:any[] = [];
+  getAllEnquiriesList: any[] = [];
 
-ngOnInit(): void {
-  this.getAllEnquiries();
-}
+  ngOnInit(): void {
+    this.getAllEnquiries();
+  }
 
-getAllEnquiries() {
-  this.masterservice.getAllEnquiries().subscribe({
-    next: (data: any) => {
-      this.getAllEnquiriesList = data;
-    }
-  });
-}
-
-delete(id: string) {
-  if (confirm('Are you sure you want to delete this enquiry?')) {
-    // Remove from UI immediately for instant feedback
-    const indexToRemove = this.getAllEnquiriesList.findIndex(e => e.enquiryId === id);
-    if (indexToRemove > -1) {
-      this.getAllEnquiriesList.splice(indexToRemove, 1);
-    }
-
-   
-    this.masterservice.deleteEnquiry(id).subscribe({
-      next: () => {
-        console.log('Enquiry deleted successfully');
+  getAllEnquiries() {
+    this.masterservice.getAllEnquiries().subscribe({
+      next: (data: any) => {
+        this.getAllEnquiriesList = data;
       }
     });
   }
-}
+
+  delete(id: string) {
+    if (confirm('Are you sure you want to delete this enquiry?')) {
+      // Remove from UI immediately for instant feedback
+      const indexToRemove = this.getAllEnquiriesList.findIndex(e => e.id === id);
+      if (indexToRemove > -1) {
+        this.getAllEnquiriesList.splice(indexToRemove, 1);
+      }
+
+
+      this.masterservice.deleteEnquiry(id).subscribe({
+        next: () => {
+          console.log('Enquiry deleted successfully');
+        }
+      });
+    }
+  }
 }

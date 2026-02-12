@@ -20,9 +20,9 @@
 					<input type="text" placeholder="Support / Sales / Service" name="enquiryType"
 						[(ngModel)]="newEnquiryObj.enquiryType"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
-				
+
 					@if(validationErrors()['enquiryType']) {
-                <small class="text-danger">{{ validationErrors()['enquiryType'] }}</small>}
+					<small class="text-danger">{{ validationErrors()['enquiryType'] }}</small>}
 				</div>
 			</div>
 
@@ -32,16 +32,16 @@
 					<input type="text" placeholder="Full name" name="customerName"
 						[(ngModel)]="newEnquiryObj.customerName" pattern="^[a-zA-Z\s'-]+$" required
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
-						 @if(validationErrors()['customerName']) {
-                <small class="text-danger">{{ validationErrors()['customerName'] }}</small>}
+					@if(validationErrors()['customerName']) {
+					<small class="text-danger">{{ validationErrors()['customerName'] }}</small>}
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Customer Email</label>
 					<input type="email" placeholder="name@email.com" name="customerEmail"
 						[(ngModel)]="newEnquiryObj.customerEmail" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
-						@if(validationErrors()['customerEmail']) {
-				<small class="text-danger">{{ validationErrors()['customerEmail'] }}</small>}
+					@if(validationErrors()['customerEmail']) {
+					<small class="text-danger">{{ validationErrors()['customerEmail'] }}</small>}
 				</div>
 			</div>
 
@@ -52,8 +52,8 @@
 						[(ngModel)]="newEnquiryObj.customerPhone"
 						pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$" required
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
-						@if(validationErrors()['customerPhone']) {
-				<small class="text-danger">{{ validationErrors()['customerPhone'] }}</small>}
+					@if(validationErrors()['customerPhone']) {
+					<small class="text-danger">{{ validationErrors()['customerPhone'] }}</small>}
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Category</label>
@@ -65,7 +65,7 @@
 						}
 					</select>
 					@if(validationErrors()['categoryId']) {
-				<small class="text-danger">{{ validationErrors()['categoryId'] }}</small>}
+					<small class="text-danger">{{ validationErrors()['categoryId'] }}</small>}
 				</div>
 			</div>
 
@@ -80,7 +80,7 @@
 						}
 					</select>
 					@if(validationErrors()['statusId']) {
-				<small class="text-danger">{{ validationErrors()['statusId'] }}</small>}
+					<small class="text-danger">{{ validationErrors()['statusId'] }}</small>}
 				</div>
 				<div class="flex items-center gap-3 pt-6">
 					<input type="checkbox" name="convertedToCustomer" [(ngModel)]="newEnquiryObj.isConverted"
@@ -95,7 +95,7 @@
 					class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"></textarea>
 				@if(validationErrors()['message']) {
 				<small class="text-danger">{{ validationErrors()['message'] }}</small>}
-				</div>
+			</div>
 
 			<div class="grid gap-6 md:grid-cols-2">
 				<div>
@@ -108,7 +108,7 @@
 					<input type="datetime-local" name="followUpDate" [(ngModel)]="newEnquiryObj.followUpDate"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none" />
 					@if(validationErrors()['followUpDate']) {
-				<small class="text-danger">{{ validationErrors()['followUpDate'] }}</small>}
+					<small class="text-danger">{{ validationErrors()['followUpDate'] }}</small>}
 				</div>
 
 			</div>

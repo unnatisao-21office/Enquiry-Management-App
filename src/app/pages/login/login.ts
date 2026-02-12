@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-   loginobj:any = {
+  loginobj: any = {
     email: '',
     password: ''
-   }
+  }
 
-   router = inject(Router);
+  router = inject(Router);
 
-  onLogin(){
-    if(this.loginobj.email === "admin@gmail.com" && this.loginobj.password === "admin123"){
+  onLogin() {
+    if (this.loginobj.email === "admin@gmail.com" && this.loginobj.password === "admin123") {
       alert('Login successful!');
-      localStorage.setItem('enquiryApp','admin');
-      
+      localStorage.setItem('enquiryApp', 'admin');
+
       this.router.navigate(['/enquiry-list']);
     } else {
       alert('Invalid email or password. Please try again.');

@@ -1,37 +1,5 @@
 {
-  "employee": [
-    {
-      "id": "8844",
-      "enquiryId": 1,
-      "customerName": "Unnati Sao",
-      "customerEmail": "unnati.sao123@.com",
-      "customerPhone": "2212121212",
-      "message": "i am converted to customer",
-      "categoryId": "3",
-      "statusId": "2",
-      "enquiryType": "Service",
-      "isConverted": true,
-      "enquiryDate": "2026-02-12T10:51",
-      "followUpDate": "2026-02-14T10:51",
-      "feedback": "i am converted to customer"
-    },
-    {
-      "id": "de84",
-      "enquiryId": 1001,
-      "customerName": "Unnati Sao",
-      "customerEmail": "unnati@gmail.com",
-      "customerPhone": "2212121212",
-      "message": "i need a urgent enquiry regarding something",
-      "categoryId": "1",
-      "statusId": "2",
-      "enquiryType": "Support",
-      "isConverted": true,
-      "enquiryDate": "2026-02-21T15:29",
-      "followUpDate": "2026-02-20T15:29",
-      "feedback": "i want to make it done"
-    }
-   
-  ],
+  "employee": [],
   "categories": [
     {
       "categoryId": 1,
