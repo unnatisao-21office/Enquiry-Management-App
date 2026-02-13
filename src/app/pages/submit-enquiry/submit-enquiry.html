@@ -59,7 +59,7 @@
 					<label class="text-sm font-medium text-slate-200">Category</label>
 					<select name="categoryId" [(ngModel)]="newEnquiryObj.categoryId"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none">
-						<option value="" selected disabled>Select category</option>
+						<option value="0" selected disabled>Select category</option>
 						@for (item of categoryList(); track item.categoryId) {
 						<option [value]="item.categoryId">{{ item.categoryName }}</option>
 						}
@@ -74,7 +74,7 @@
 					<label class="text-sm font-medium text-slate-200">Status</label>
 					<select name="statusId" [(ngModel)]="newEnquiryObj.statusId"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none">
-						<option value="" selected disabled>Select status</option>
+						<option value="0" selected disabled>Select status</option>
 						@for (item of statusList(); track item.statusId) {
 						<option [value]="item.statusId">{{ item.statusName }}</option>
 						}

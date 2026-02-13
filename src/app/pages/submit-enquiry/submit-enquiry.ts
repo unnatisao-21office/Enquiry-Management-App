@@ -15,20 +15,20 @@ import { EMAIL_REGEX, NAME_REGEX, PHONE_REGEX } from '../../constant';
   standalone: true,
 })
 export class SubmitEnquiry implements OnInit {
-  masterService = inject(MasterService);
-  statusList = signal<IStatusModel[]>([]);
-  categoryList = signal<ICategoryModel[]>([]);
-  newEnquiryObj: EnquiryModel = new EnquiryModel();
-  validationErrors = signal<{ [key: string]: string }>({});
+  private readonly masterService = inject(MasterService);
+  public statusList = signal<IStatusModel[]>([]);
+  public categoryList = signal<ICategoryModel[]>([]);
+  public newEnquiryObj: EnquiryModel = new EnquiryModel();
+  public validationErrors = signal<{ [key: string]: string }>({});
 
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getStatus();
     this.getCategories();
   }
 
 
-  getStatus() {
+  public getStatus() {
     this.masterService.getAllStatus().subscribe({
       next: (res: IStatusModel[]) => {
         this.statusList.set(res);
@@ -36,7 +36,7 @@ export class SubmitEnquiry implements OnInit {
     });
   }
 
-  getCategories() {
+  public getCategories() {
     this.masterService.getAllCategory().subscribe({
       next: (res: ICategoryModel[]) => {
         this.categoryList.set(res);
@@ -44,7 +44,7 @@ export class SubmitEnquiry implements OnInit {
     });
   }
 
-  isFormValid(): boolean {
+  public isFormValid(): boolean {
     const trimmedFullName = this.newEnquiryObj.customerName?.trim() || '';
     const trimmedEmail = this.newEnquiryObj.customerEmail?.trim() || '';
     const trimmedMobile = this.newEnquiryObj.customerPhone?.trim() || '';
@@ -64,7 +64,7 @@ export class SubmitEnquiry implements OnInit {
     );
   }
 
-  saveEnquiry() {
+  public saveEnquiry() {
     const errors: { [key: string]: string } = {};
 
     const trimmedFullName = this.newEnquiryObj.customerName.trim();

@@ -10,11 +10,11 @@ import { Router, RouterLink } from '@angular/router';
 export class Navbar {
   private router = inject(Router);
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return localStorage.getItem('enquiryApp') === 'admin';
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem('enquiryApp');
     this.router.navigate(['/login']);
   }

@@ -1,16 +1,16 @@
 export class EnquiryModel {
-    enquiryId: number;
-    customerName: string;
-    customerEmail: string;
-    customerPhone: string;
-    message: string;
-    categoryId: number;
-    statusId: number;
-    enquiryType: string;
-    isConverted: boolean;
-    enquiryDate: Date;
-    followUpDate: Date;
-    feedback: string;
+    public enquiryId: number;
+    public customerName: string;
+    public customerEmail: string;
+    public customerPhone: string;
+    public message: string;
+    public categoryId: number;
+    public statusId: number;
+    public enquiryType: string;
+    public isConverted: boolean;
+    public enquiryDate: Date;
+    public followUpDate: Date;
+    public feedback: string;
 
     constructor() {
         this.enquiryId = 0;

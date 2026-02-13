@@ -7,6 +7,8 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { Login } from './pages/login/login';
 import { SubmitEnquiry } from './pages/submit-enquiry/submit-enquiry';
 import { Navbar } from './pages/navbar/navbar';
+import { ForgetPassword } from './pages/forget-password/forget-password';
+import { CheckMail } from './pages/check-mail/check-mail';
 
 export const routes: Routes = [
 
@@ -39,6 +41,12 @@ export const routes: Routes = [
     }, {
         path: 'navbar',
         component: Navbar
+    }, {
+        path: 'forgot-password',
+        component: ForgetPassword
+    }, {
+        path: 'check-email',
+        component: CheckMail
     }
 
 ];

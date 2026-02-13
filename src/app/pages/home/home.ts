@@ -8,12 +8,12 @@ import { Router, RouterLink } from "@angular/router";
   styleUrl: './home.css',
 })
 export class Home {
-  constructor(private router: Router) { }
+  constructor(private readonly router: Router) { }
 
-  navigateToSubmitEnquiry() {
+  public navigateToSubmitEnquiry() {
     this.router.navigate(['/submit-enquiry']);
   }
-  navigateToDashboard() {
+  public navigateToDashboard() {
     this.router.navigate(['/dashboard']);
   }
 }
