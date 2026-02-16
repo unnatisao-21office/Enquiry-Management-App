@@ -1,9 +1,9 @@
-
 <section class="home-page">
 	<div class="mx-auto max-w-6xl px-6 py-16">
 		<div class="grid gap-10  lg:items-center">
 			<div>
-				<div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+				<div
+					class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
 					Enquiry Management Suite
 				</div>
 				<h1 class="home-hero-title mt-6 text-4xl font-semibold text-white sm:text-5xl">
@@ -15,10 +15,12 @@
 					managers who need clarity without chaos.
 				</p>
 				<div class="mt-8 flex flex-wrap gap-4">
-					<button class="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5">
+					<button routerLink="/submit-enquiry"
+						class="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5">
 						Start New Enquiry
 					</button>
-					<button class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60">
+					<button routerLink="/dashboard"
+						class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60">
 						View Dashboard
 					</button>
 				</div>
@@ -27,18 +29,22 @@
 						Why choose our enquiry management system?
 					</h2>
 					<div class="grid gap-4 sm:grid-cols-3">
-					<div class="stat-card">
-						<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Fast Response</p>
-						<p class="mt-2 text-sm font-semibold text-center text-white">Get quick response to your enquiries with our streamlined system.</p>
-					</div>
-					<div class="stat-card">
-						<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Secure and Scalable</p>
-						<p class="mt-2 text-sm font-semibold text-center text-white">Our platform ensures your data is protected and can grow with your needs.</p>
-					</div>
-					<div class="stat-card">
-						<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Track Progress</p>
-						<p class="mt-2 text-sm font-semibold text-center text-white">Monitor the status of every enquiry from submission to closure.</p>
-					</div>
+						<div class="stat-card">
+							<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Fast Response</p>
+							<p class="mt-2 text-sm font-semibold text-center text-white">Get quick response to your
+								enquiries with our streamlined system.</p>
+						</div>
+						<div class="stat-card">
+							<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Secure and Scalable
+							</p>
+							<p class="mt-2 text-sm font-semibold text-center text-white">Our platform ensures your data
+								is protected and can grow with your needs.</p>
+						</div>
+						<div class="stat-card">
+							<p class="text-lg uppercase tracking-[0.2em] text-white/60 text-center">Track Progress</p>
+							<p class="mt-2 text-sm font-semibold text-center text-white">Monitor the status of every
+								enquiry from submission to closure.</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -125,4 +131,3 @@
 		</div>
 	</div>
 </section>
-

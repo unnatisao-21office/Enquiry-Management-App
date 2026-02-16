@@ -1,57 +1,65 @@
 {
   "employee": [
     {
-      "enquiryId": 0,
-      "customerName": "string",
-      "customerEmail": "string",
-      "customerPhone": "string",
-      "message": "string",
-      "categoryId": 0,
-      "statusId": 0,
-      "enquiryType": "string",
-      "isConverted": false,
-      "enquiryDate": "2026-02-10T05:36:50.250Z",
-      "followUpDate": "2026-02-10T05:36:50.250Z",
-      "feedback": "string"
+      "id": "eacc",
+      "enquiryId": 1,
+      "customerName": "Unnati",
+      "customerEmail": "unnati56@gmail.com",
+      "customerPhone": "8623546790",
+      "message": "i want to issues a enquiry",
+      "categoryId": "2",
+      "statusId": "2",
+      "enquiryType": "Service",
+      "isConverted": true,
+      "enquiryDate": "2026-02-20T13:53",
+      "followUpDate": "2026-02-28T13:54",
+      "feedback": "done"
     }
   ],
   "categories": [
     {
       "categoryId": 1,
       "categoryName": "Cloud Services",
-      "isActive": true
+      "isActive": true,
+      "id": "1962"
     },
     {
       "categoryId": 2,
       "categoryName": "Hosting",
-      "isActive": true
+      "isActive": true,
+      "id": "3644"
     },
     {
       "categoryId": 3,
       "categoryName": "Software Development",
-      "isActive": true
+      "isActive": true,
+      "id": "5087"
     }
   ],
   "status": [
     {
       "statusId": 1,
       "statusName": "new",
-      "isActive": true
+      "isActive": true,
+      "id": "662d"
     },
     {
       "statusId": 2,
       "statusName": "In Progress",
-      "isActive": true
+      "isActive": true,
+      "id": "f68d"
     },
     {
       "statusId": 3,
       "statusName": "Follow Up Needed",
-      "isActive": true
+      "isActive": true,
+      "id": "3d19"
     },
     {
       "statusId": 4,
       "statusName": "Order Created",
-      "isActive": true
+      "isActive": true,
+      "id": "6a8c"
     }
   ]
 }

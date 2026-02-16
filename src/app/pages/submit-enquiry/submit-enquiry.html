@@ -1,4 +1,4 @@
-<div class="bg-slate-900/70 py-4">
+<section class="home-page">
 
 	<section class="mx-auto max-w-5xl  px-6 py-12">
 		<div class="mb-8">
@@ -17,39 +17,55 @@
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Enquiry Type</label>
-					<input type="text" placeholder="Support / Sales / Service" name="enquiryType" [(ngModel)]="newEnquiryObj.enquiryType"
+					<input type="text" placeholder="Support / Sales / Service" name="enquiryType"
+						[(ngModel)]="newEnquiryObj.enquiryType"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+
+					@if(validationErrors()['enquiryType']) {
+					<small class="text-danger">{{ validationErrors()['enquiryType'] }}</small>}
 				</div>
 			</div>
 
 			<div class="grid gap-6 md:grid-cols-2">
 				<div>
 					<label class="text-sm font-medium text-slate-200">Customer Name</label>
-					<input type="text" placeholder="Full name" name="customerName" [(ngModel)]="newEnquiryObj.customerName"
+					<input type="text" placeholder="Full name" name="customerName"
+						[(ngModel)]="newEnquiryObj.customerName" pattern="^[a-zA-Z\s'-]+$" required
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+					@if(validationErrors()['customerName']) {
+					<small class="text-danger">{{ validationErrors()['customerName'] }}</small>}
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Customer Email</label>
-					<input type="email" placeholder="name@email.com" name="customerEmail" [(ngModel)]="newEnquiryObj.customerEmail"
+					<input type="email" placeholder="name@email.com" name="customerEmail"
+						[(ngModel)]="newEnquiryObj.customerEmail" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+					@if(validationErrors()['customerEmail']) {
+					<small class="text-danger">{{ validationErrors()['customerEmail'] }}</small>}
 				</div>
 			</div>
 
 			<div class="grid gap-6 md:grid-cols-2">
 				<div>
 					<label class="text-sm font-medium text-slate-200">Customer Phone</label>
-					<input type="tel" placeholder="+1 555 000 1234" name="customerPhone" [(ngModel)]="newEnquiryObj.customerPhone"
+					<input type="tel" placeholder="+1 555 000 1234" name="customerPhone"
+						[(ngModel)]="newEnquiryObj.customerPhone"
+						pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$" required
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+					@if(validationErrors()['customerPhone']) {
+					<small class="text-danger">{{ validationErrors()['customerPhone'] }}</small>}
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Category</label>
 					<select name="categoryId" [(ngModel)]="newEnquiryObj.categoryId"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none">
-						<option value="" selected disabled>Select category</option>
+						<option value="0" selected disabled>Select category</option>
 						@for (item of categoryList(); track item.categoryId) {
 						<option [value]="item.categoryId">{{ item.categoryName }}</option>
 						}
 					</select>
+					@if(validationErrors()['categoryId']) {
+					<small class="text-danger">{{ validationErrors()['categoryId'] }}</small>}
 				</div>
 			</div>
 
@@ -58,11 +74,13 @@
 					<label class="text-sm font-medium text-slate-200">Status</label>
 					<select name="statusId" [(ngModel)]="newEnquiryObj.statusId"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none">
-						<option value="" selected disabled>Select status</option>
+						<option value="0" selected disabled>Select status</option>
 						@for (item of statusList(); track item.statusId) {
 						<option [value]="item.statusId">{{ item.statusName }}</option>
 						}
 					</select>
+					@if(validationErrors()['statusId']) {
+					<small class="text-danger">{{ validationErrors()['statusId'] }}</small>}
 				</div>
 				<div class="flex items-center gap-3 pt-6">
 					<input type="checkbox" name="convertedToCustomer" [(ngModel)]="newEnquiryObj.isConverted"
@@ -75,6 +93,8 @@
 				<label class="text-sm font-medium text-slate-200">Message</label>
 				<textarea rows="4" placeholder="Describe the enquiry" name="message" [(ngModel)]="newEnquiryObj.message"
 					class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"></textarea>
+				@if(validationErrors()['message']) {
+				<small class="text-danger">{{ validationErrors()['message'] }}</small>}
 			</div>
 
 			<div class="grid gap-6 md:grid-cols-2">
@@ -85,9 +105,12 @@
 				</div>
 				<div>
 					<label class="text-sm font-medium text-slate-200">Follow Up Date</label>
-					<input type="datetime-local" name="followUpDate" [(ngModel)]="newEnquiryObj.followUpDate" 
+					<input type="datetime-local" name="followUpDate" [(ngModel)]="newEnquiryObj.followUpDate"
 						class="mt-2 w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2 text-slate-100 focus:border-cyan-400 focus:outline-none" />
+					@if(validationErrors()['followUpDate']) {
+					<small class="text-danger">{{ validationErrors()['followUpDate'] }}</small>}
 				</div>
+
 			</div>
 
 			<div>
@@ -97,8 +120,8 @@
 			</div>
 
 			<div class="flex flex-wrap gap-3">
-				<button type="button" (click)="saveEnquiry()"
-					class="rounded-full bg-cyan-400 px-6 py-2 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5">
+				<button type="button" (click)="saveEnquiry()" [disabled]="!isFormValid()"
+					class="rounded-full bg-cyan-400 px-6 py-2 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0">
 					Save Enquiry
 				</button>
 				<button type="reset"
@@ -108,4 +131,5 @@
 			</div>
 		</form>
 	</section>
-</div>
+
+</section>
