@@ -2,3 +2,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body.light-mode {
+    color: #0b1220;
+    background-color: #f9f7f3;
+}
+
+body.light-mode .home-page {
+   position: relative;
+	min-height: calc(100vh - 64px);
+	background: radial-gradient(circle at top, rgba(197, 171, 240, 0.25), transparent 55%),
+		radial-gradient(circle at 30% 20%, rgba(236, 111, 205, 0.3), transparent 50%),
+		linear-gradient(135deg, #b589d1 0%, #9977a8 50%, #9dd6ec 100%);
+	font-family: "Work Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	overflow: hidden;
+}
+
+body.light-mode .app-navbar {
+    background: rgba(193, 46, 238, 0.92);
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #0b1220;
+    box-shadow: 0 10px 30px rgba(77, 102, 160, 0.08);
+}
+
+body.light-mode .app-navbar a,
+body.light-mode .app-navbar button,
+body.light-mode .app-navbar summary {
+    color: #874caf;
+}
+
+body.light-mode .app-navbar a:hover,
+body.light-mode .app-navbar button:hover,
+body.light-mode .app-navbar summary:hover {
+    background: rgba(59, 25, 66, 0.06);
+}
+
+body.light-mode .bg-slate-950,
+body.light-mode .bg-slate-900,
+body.light-mode .bg-slate-850,
+body.light-mode .bg-slate-950\/70,
+body.light-mode .bg-slate-900\/60,
+body.light-mode .bg-slate-900\/50,
+body.light-mode .bg-slate-850\/90 {
+    background-color: rgba(255, 255, 255, 0.82) !important;
+    box-shadow: 0 18px 45px rgba(107, 58, 114, 0.014) !important;
+}
+
+body.light-mode .border-white\/10,
+body.light-mode .border-slate-700,
+body.light-mode .border-slate-800,
+body.light-mode .border-slate-600 {
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.light-mode .text-white,
+body.light-mode .text-slate-100,
+body.light-mode .text-slate-200,
+body.light-mode .text-slate-300,
+body.light-mode .text-slate-400 {
+    color: #0b1220 !important;
+}
+
+body.light-mode .text-slate-500 {
+    color: #475569 !important;
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: #0b1220;
+    border-color: rgba(15, 23, 42, 0.18);
+}

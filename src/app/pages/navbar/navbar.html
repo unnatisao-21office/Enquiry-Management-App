@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 text-slate-100 backdrop-blur">
+<nav class="app-navbar sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 text-slate-100 backdrop-blur">
     <div class="mx-auto max-w-7xl px-4">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center gap-3">
@@ -60,6 +60,12 @@
                     </button>
                     }
                 </li>
+                <li>
+                    <button type="button" (click)="toggleTheme()"
+                        class="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+                        {{ isDarkMode ? 'Light' : 'Dark' }}
+                    </button>
+                </li>
             </ul>
 
             <details class="group relative md:hidden">
@@ -111,6 +117,10 @@
                         Logout
                     </button>
                     }
+                    <button type="button" (click)="toggleTheme()"
+                        class="mt-1 block w-full rounded-xl border border-white/10 px-3 py-2 text-left text-sm font-semibold text-white transition hover:bg-white/10">
+                        {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+                    </button>
                 </div>
             </details>
         </div>

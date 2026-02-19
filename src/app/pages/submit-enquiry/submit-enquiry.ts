@@ -1,10 +1,10 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, OnInit, ViewChild, inject, signal } from '@angular/core';
 import { MasterService } from '../../../services/master-service';
 import { EnquiryModel } from '../../model/class/enquiry.model';
 import { ICategoryModel } from '../../model/interface/category.model';
 
 import { IStatusModel } from '../../model/interface/status.model';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { EMAIL_REGEX, NAME_REGEX, PHONE_REGEX } from '../../constant';
 
 @Component({
@@ -15,6 +15,8 @@ import { EMAIL_REGEX, NAME_REGEX, PHONE_REGEX } from '../../constant';
   standalone: true,
 })
 export class SubmitEnquiry implements OnInit {
+  @ViewChild('enquiryForm') public enquiryForm?: NgForm;
+
   private readonly masterService = inject(MasterService);
   public statusList = signal<IStatusModel[]>([]);
   public categoryList = signal<ICategoryModel[]>([]);
@@ -22,7 +24,7 @@ export class SubmitEnquiry implements OnInit {
   public validationErrors = signal<{ [key: string]: string }>({});
 
 
-  public ngOnInit(): void { 
+  public ngOnInit(): void {
     this.getStatus();
     this.getCategories();
   }
@@ -126,6 +128,10 @@ export class SubmitEnquiry implements OnInit {
     this.masterService.saveEnquiry(this.newEnquiryObj).subscribe({
       next: (res: any) => {
         alert("Enquiry saved successfully!");
+        const freshModel = new EnquiryModel();
+        this.newEnquiryObj = freshModel;
+        this.validationErrors.set({});
+        this.enquiryForm?.resetForm(freshModel);
       }, error: (error: any) => {
         alert("Failed to save enquiry. Please try again.");
       }

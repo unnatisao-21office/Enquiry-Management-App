@@ -1,5 +1,21 @@
 {
-  "employee": [],
+  "employee": [
+    {
+      "id": "6597",
+      "enquiryId": 1,
+      "customerName": "Unnati Sao",
+      "customerEmail": "unnatsao@cbnits.com",
+      "customerPhone": "9876543210",
+      "message": "i have an issue need to resolve,i have an issue need to resolve,i have an issue need to resolve,i have an issue need to resolve",
+      "categoryId": "1",
+      "statusId": "2",
+      "enquiryType": "Support",
+      "isConverted": true,
+      "enquiryDate": "2026-02-05T14:44",
+      "followUpDate": "2026-02-27T14:43",
+      "feedback": "i have an issue need to resolvei have an issue need to resolvei have an issue need to resolvei have an issue need to resolve"
+    }
+  ],
   "categories": [
     {
       "categoryId": 1,
