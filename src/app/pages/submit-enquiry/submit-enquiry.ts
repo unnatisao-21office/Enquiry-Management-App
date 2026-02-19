@@ -22,7 +22,7 @@ export class SubmitEnquiry implements OnInit {
   public validationErrors = signal<{ [key: string]: string }>({});
 
 
-  public ngOnInit(): void {
+  public ngOnInit(): void { 
     this.getStatus();
     this.getCategories();
   }

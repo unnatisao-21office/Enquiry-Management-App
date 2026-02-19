@@ -1,21 +1,5 @@
 {
-  "employee": [
-    {
-      "id": "eacc",
-      "enquiryId": 1,
-      "customerName": "Unnati",
-      "customerEmail": "unnati56@gmail.com",
-      "customerPhone": "8623546790",
-      "message": "i want to issues a enquiry",
-      "categoryId": "2",
-      "statusId": "2",
-      "enquiryType": "Service",
-      "isConverted": true,
-      "enquiryDate": "2026-02-20T13:53",
-      "followUpDate": "2026-02-28T13:54",
-      "feedback": "done"
-    }
-  ],
+  "employee": [],
   "categories": [
     {
       "categoryId": 1,

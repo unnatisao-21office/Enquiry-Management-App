@@ -41,13 +41,16 @@ export class EnquiryList implements OnInit {
     });
   }
 
+   
+  
+
   public getAllEnquiries() {
     this.masterService.getAllEnquiries().subscribe({
       next: (data: any) => {
         this.getAllEnquiriesList = data.map((enquiry: any) => ({
           ...enquiry,
           category: this.categoryMap[enquiry.categoryId] || 'N/A',
-          status: this.statusMap[enquiry.statusId] || 'N/A'
+          status: this.statusMap[enquiry.statusId] || 'N/A'      
         }));
       }
     });
