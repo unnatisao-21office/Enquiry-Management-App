@@ -16,10 +16,10 @@ export class Dashboard implements OnInit {
   public categories: any[] = [];
   public statuses: any[] = [];
 
-  public totalEnquiries = 0;
-  public convertedCount = 0;
-  public pendingFollowUpCount = 0;
-  public todayEnquiriesCount = 0;
+  public totalEnquiries: number = 0;
+  public convertedCount: number = 0;
+  public pendingFollowUpCount: number = 0;
+  public todayEnquiriesCount: number = 0;
 
   public statusSummary: { name: string; count: number }[] = [];
   public categorySummary: { name: string; count: number }[] = [];

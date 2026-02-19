@@ -27,6 +27,7 @@ export class Navbar implements OnInit {
   public logout(): void {
     localStorage.removeItem('enquiryApp');
     this.router.navigate(['/login']);
+
   }
 
   public toggleTheme(): void {
