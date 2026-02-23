@@ -41,8 +41,8 @@ export class EnquiryList implements OnInit {
     });
   }
 
-   
-  
+
+
 
   public getAllEnquiries() {
     this.masterService.getAllEnquiries().subscribe({
@@ -50,7 +50,7 @@ export class EnquiryList implements OnInit {
         this.getAllEnquiriesList = data.map((enquiry: any) => ({
           ...enquiry,
           category: this.categoryMap[enquiry.categoryId] || 'N/A',
-          status: this.statusMap[enquiry.statusId] || 'N/A'      
+          status: this.statusMap[enquiry.statusId] || 'N/A'
         }));
       }
     });

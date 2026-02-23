@@ -1,28 +1,14 @@
 <section class="min-h-screen home-page p-6">
     <div class="mx-auto max-w-7xl space-y-6">
-        <app-dashboard-header></app-dashboard-header>
+        <app-dashboard-header [totalEnquiries]="totalEnquiries"></app-dashboard-header>
 
         <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-xl border border-slate-700 bg-slate-850/90 p-4 shadow-lg">
-                <p class="text-xs uppercase tracking-wide text-slate-400">All Enquiries</p>
-                <p class="mt-2 text-3xl font-semibold text-white">{{ totalEnquiries }}</p>
-            </div>
-
-            <div class="rounded-xl border border-slate-700 bg-slate-850/90 p-4 shadow-lg">
-                <p class="text-xs uppercase tracking-wide text-slate-400">Converted</p>
-                <p class="mt-2 text-3xl font-semibold text-emerald-300">{{ convertedCount }}</p>
-            </div>
-
-
-            <div class="rounded-xl border border-slate-700 bg-slate-850/90 p-4 shadow-lg">
-                <p class="text-xs uppercase tracking-wide text-slate-400">Pending Follow-Up</p>
-                <p class="mt-2 text-3xl font-semibold text-amber-300">{{ pendingFollowUpCount }}</p>
-            </div>
-
-            <div class="rounded-xl border border-slate-700 bg-slate-850/90 p-4 shadow-lg">
-                <p class="text-xs uppercase tracking-wide text-slate-400">Today Enquiries</p>
-                <p class="mt-2 text-3xl font-semibold text-cyan-300">{{ todayEnquiriesCount }}</p>
-            </div>
+            <app-stats-card label="All Enquiries" [value]="totalEnquiries" colorClass="text-white"></app-stats-card>
+            <app-stats-card label="Converted" [value]="convertedCount" colorClass="text-emerald-300"></app-stats-card>
+            <app-stats-card label="Pending Follow-Up" [value]="pendingFollowUpCount"
+                colorClass="text-amber-300"></app-stats-card>
+            <app-stats-card label="Today Enquiries" [value]="todayEnquiriesCount"
+                colorClass="text-cyan-300"></app-stats-card>
         </div>
 
         <div class="grid gap-6 lg:grid-cols-2">

@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { MasterService } from '../../../services/master-service';
 import { DashboardHeader } from '../dashboard-header/dashboard-header';
+import { StatsCard } from '../stats-card/stats-card';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardHeader],
+  imports: [CommonModule, DashboardHeader, StatsCard],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-header',
@@ -8,6 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard-header.css',
 })
 export class DashboardHeader {
-  public enquiries: any[] = [];
-  public totalEnquiries: number = 0;
+  @Input() public totalEnquiries: number = 0;
 }
