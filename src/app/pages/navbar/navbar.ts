@@ -35,9 +35,8 @@ export class Navbar implements OnInit {
     this.applyTheme(this.isDarkMode);
     localStorage.setItem(this.themeStorageKey, this.isDarkMode ? 'dark' : 'light');
   }
-
   private applyTheme(isDarkMode: boolean): void {
     const body = this.document.body;
     body.classList.toggle('light-mode', !isDarkMode);
-  }
+  } 
 }

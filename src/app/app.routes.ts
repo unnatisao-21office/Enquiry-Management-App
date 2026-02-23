@@ -9,6 +9,8 @@ import { SubmitEnquiry } from './pages/submit-enquiry/submit-enquiry';
 import { Navbar } from './pages/navbar/navbar';
 import { ForgetPassword } from './pages/forget-password/forget-password';
 import { CheckMail } from './pages/check-mail/check-mail';
+import { DashboardHeader } from './pages/dashboard-header/dashboard-header';
+import { StatsCard } from './pages/stats-card/stats-card';
 
 export const routes: Routes = [
 
@@ -47,6 +49,12 @@ export const routes: Routes = [
     }, {
         path: 'check-email',
         component: CheckMail
+    }, {
+        path: 'dashboard-header',
+        component: DashboardHeader
+    }, {
+        path: 'stats-card',
+        component: StatsCard
     }
 
 ];

@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { MasterService } from '../../../services/master-service';
+import { DashboardHeader } from '../dashboard-header/dashboard-header';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, DashboardHeader],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -69,6 +71,8 @@ export class Dashboard implements OnInit {
             }));
           },
         });
+
+
 
         this.recentEnquiries = [...this.enquiries]
           .sort((a, b) => new Date(b.enquiryDate).getTime() - new Date(a.enquiryDate).getTime())
