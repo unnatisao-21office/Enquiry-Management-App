@@ -11,6 +11,8 @@ import { ForgetPassword } from './pages/forget-password/forget-password';
 import { CheckMail } from './pages/check-mail/check-mail';
 import { DashboardHeader } from './pages/dashboard-header/dashboard-header';
 import { StatsCard } from './pages/stats-card/stats-card';
+import { StatusSummary } from './pages/dashboard/status-summary/status-summary';
+import { CategorySummary } from './pages/dashboard/category-summary/category-summary';
 
 export const routes: Routes = [
 
@@ -55,6 +57,12 @@ export const routes: Routes = [
     }, {
         path: 'stats-card',
         component: StatsCard
+    }, {
+        path: 'status-summary',
+        component: StatusSummary
+    }, {
+        path: 'category-summary',
+        component: CategorySummary
     }
 
 ];

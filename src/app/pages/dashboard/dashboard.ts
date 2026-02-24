@@ -3,11 +3,13 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MasterService } from '../../../services/master-service';
 import { DashboardHeader } from '../dashboard-header/dashboard-header';
 import { StatsCard } from '../stats-card/stats-card';
+import { CategorySummary } from './category-summary/category-summary';
 
+import { StatusSummary } from './status-summary/status-summary';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardHeader, StatsCard],
+  imports: [CommonModule, DashboardHeader, StatsCard, StatusSummary, CategorySummary],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
