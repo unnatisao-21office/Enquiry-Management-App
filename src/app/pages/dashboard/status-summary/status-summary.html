@@ -1,7 +1,10 @@
 <div class="status-summary">
     <h3>Status Summary</h3>
-    <div *ngFor="let status of statusSummary" class="status-item">
+
+    @for (status of statusSummary; track status.name) {
+    <div class="status-item">
         <span class="status-name">{{ status.name }}</span>
         <span class="status-count">{{ status.count }}</span>
     </div>
+    }
 </div>
