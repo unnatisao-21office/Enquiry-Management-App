@@ -13,6 +13,7 @@ import { DashboardHeader } from './pages/dashboard-header/dashboard-header';
 import { StatsCard } from './pages/stats-card/stats-card';
 import { StatusSummary } from './pages/dashboard/status-summary/status-summary';
 import { CategorySummary } from './pages/dashboard/category-summary/category-summary';
+import { RecentEnquiries } from './pages/dashboard/recent-enquiries/recent-enquiries';
 
 export const routes: Routes = [
 
@@ -63,6 +64,9 @@ export const routes: Routes = [
     }, {
         path: 'category-summary',
         component: CategorySummary
+    }, {
+        path: 'recent-enquiries',
+        component: RecentEnquiries
     }
 
 ];

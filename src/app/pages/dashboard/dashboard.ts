@@ -6,10 +6,11 @@ import { StatsCard } from '../stats-card/stats-card';
 import { CategorySummary } from './category-summary/category-summary';
 
 import { StatusSummary } from './status-summary/status-summary';
+import { RecentEnquiries } from "./recent-enquiries/recent-enquiries";
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardHeader, StatsCard, StatusSummary, CategorySummary],
+  imports: [CommonModule, DashboardHeader, StatsCard, StatusSummary, CategorySummary, RecentEnquiries],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -39,6 +40,7 @@ export class Dashboard implements OnInit {
       next: (enquiryData: any) => {
         this.enquiries = Array.isArray(enquiryData) ? enquiryData : [];
         this.totalEnquiries = this.enquiries.length;
+
         this.convertedCount = this.enquiries.filter((enquiry) => enquiry.isConverted).length;
         this.pendingFollowUpCount = this.enquiries.filter((enquiry) => {
           const followUpDate = new Date(enquiry.followUpDate);
@@ -76,9 +78,11 @@ export class Dashboard implements OnInit {
         });
 
 
-
         this.recentEnquiries = [...this.enquiries]
-          .sort((a, b) => new Date(b.enquiryDate).getTime() - new Date(a.enquiryDate).getTime())
+          .sort(
+            (a, b) =>
+              new Date(b.enquiryDate).getTime() - new Date(a.enquiryDate).getTime()
+          )
           .slice(0, 5);
       },
     });

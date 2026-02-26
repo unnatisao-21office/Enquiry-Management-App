@@ -1,0 +1,46 @@
+.dashboard-panel {
+    position: relative;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.84), rgba(30, 41, 59, 0.5));
+    box-shadow: 0 0 0 1px rgba(30, 41, 59, 0.4), 0 8px 28px rgba(8, 47, 73, 0.35),
+        0 0 34px rgba(168, 85, 247, 0.18);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+
+.panel-title {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #dbeafe;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.dashboard-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.dashboard-table thead tr {
+    background: rgba(15, 23, 42, 0.65);
+}
+
+.dashboard-table tbody tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.dashboard-table tbody tr:hover {
+    background: rgba(56, 189, 248, 0.12);
+    transform: scale(1.01);
+}
+
+.empty-state {
+    font-size: 0.875rem;
+    color: rgba(203, 213, 225, 0.8);
+    font-style: italic;
+}
