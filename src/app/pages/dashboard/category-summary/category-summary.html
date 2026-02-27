@@ -1,0 +1,8 @@
+<div class="category-summary">
+  <h3>Category Summary</h3>
+  @for (category of categorySummary; track category.name) {
+    <div class="category-item">
+      <span class="category-name">{{ category.name }}</span>
+      <span class="category-count">{{ category.count }}</span>
+    </div>}
+</div>

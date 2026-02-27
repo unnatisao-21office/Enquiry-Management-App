@@ -41,6 +41,9 @@ export class EnquiryList implements OnInit {
     });
   }
 
+
+
+
   public getAllEnquiries() {
     this.masterService.getAllEnquiries().subscribe({
       next: (data: any) => {

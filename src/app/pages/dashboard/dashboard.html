@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<section class="min-h-screen home-page p-6">
+    <div class="mx-auto max-w-7xl space-y-6 dashboard-shell">
+        <div class="neon-orb neon-orb--pink"></div>
+        <div class="neon-orb neon-orb--cyan"></div>
+        <div class="neon-grid"></div>
+
+        <app-dashboard-header [totalEnquiries]="totalEnquiries"></app-dashboard-header>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 dashboard-stats">
+            <app-stats-card label="All Enquiries" [value]="totalEnquiries" colorClass="text-white"></app-stats-card>
+            <app-stats-card label="Converted" [value]="convertedCount" colorClass="text-emerald-300"></app-stats-card>
+            <app-stats-card label="Pending Follow-Up" [value]="pendingFollowUpCount"
+                colorClass="text-amber-300"></app-stats-card>
+            <app-stats-card label="Today Enquiries" [value]="todayEnquiriesCount"
+                colorClass="text-cyan-300"></app-stats-card>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+            <div>
+                <app-status-summary [statusSummary]="statusSummary"></app-status-summary>
+            </div>
+
+            <div>
+                <app-category-summary [categorySummary]="categorySummary"></app-category-summary>
+            </div>
+        </div>
+
+        <div class="dashboard-panel">
+            <app-recent-enquiries [recentEnquiries]="recentEnquiries"></app-recent-enquiries>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+.status-summary {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+}
+
+.status-summary h3 {
+  color: #e4ddf8;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(146, 109, 233, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.status-item:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.status-name {
+  color: #e0e7ff;
+  font-weight: 500;
+}
+
+.status-count {
+  color: #a78bfa;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px rgba(133, 97, 241, 0.6);
+}
