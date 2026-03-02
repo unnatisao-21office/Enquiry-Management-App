@@ -17,6 +17,10 @@ export class MasterService {
     return this.http.get<ICategoryModel[]>("http://localhost:3000/categories");
   }
 
+  public saveCategory(obj: ICategoryModel) {
+    return this.http.post("http://localhost:3000/categories", obj);
+  }
+
   public saveEnquiry(obj: any) {
     return this.http.post("http://localhost:3000/employee", obj);
   }
