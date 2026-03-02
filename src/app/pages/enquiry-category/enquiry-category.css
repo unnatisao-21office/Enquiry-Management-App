@@ -1,0 +1,53 @@
+.home-page {
+	position: relative;
+	min-height: calc(100vh - 64px);
+	background: radial-gradient(circle at 10% 0%, rgba(255, 64, 175, 0.32), transparent 42%),
+		radial-gradient(circle at 92% 8%, rgba(56, 189, 248, 0.24), transparent 36%),
+		radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.2), transparent 42%),
+		linear-gradient(140deg, #090914 0%, #120a2a 38%, #1b0937 72%, #0b1021 100%);
+	font-family: "Work Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	overflow: clip;
+}
+
+.dashboard-shell {
+	position: relative;
+	padding: 0.5rem;
+	isolation: isolate;
+}
+
+.neon-orb {
+	position: absolute;
+	pointer-events: none;
+	border-radius: 9999px;
+	filter: blur(36px);
+	opacity: 0.9;
+	z-index: -2;
+}
+
+.neon-orb--pink {
+	width: 220px;
+	height: 220px;
+	background: rgba(244, 63, 94, 0.34);
+	top: -50px;
+	left: -40px;
+}
+
+.neon-orb--cyan {
+	width: 260px;
+	height: 260px;
+	background: rgba(34, 211, 238, 0.32);
+	bottom: 40px;
+	right: -70px;
+}
+
+.neon-grid {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+	background-size: 22px 22px;
+	mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+	opacity: 0.35;
+	z-index: -1;
+}
