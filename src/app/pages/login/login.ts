@@ -37,10 +37,12 @@ export class Login {
       return;
     }
 
-    if (trimmedEmail === "admin@gmail.com" && trimmedPassword === "admin123") {
-      alert('Login successful!');
+    if (trimmedEmail === 'admin@gmail.com' && trimmedPassword === 'admin123') {
       localStorage.setItem('enquiryApp', 'admin');
       this.router.navigate(['/enquiry-list']);
+    } else if (trimmedEmail === 'user@gmail.com' && trimmedPassword === 'user123') {
+      localStorage.setItem('enquiryApp', 'user');
+      this.router.navigate(['/submit-enquiry']);
     } else {
       alert('Invalid email or password. Please try again.');
     }

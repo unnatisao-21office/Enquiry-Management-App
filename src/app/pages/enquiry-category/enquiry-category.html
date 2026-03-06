@@ -1,1 +1,72 @@
+<section class="min-h-screen home-page p-6">
+    <div class="mx-auto max-w-7xl space-y-6 dashboard-shell">
+        <div class="neon-orb neon-orb--pink"></div>
+        <div class="neon-orb neon-orb--cyan"></div>
+        <div class="neon-grid"></div>
+        <div class="mt-1 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-white">Enquiry Categories</h1>
+                <p class="text-sm mt-1 text-slate-300">Overview of enquiry categories and their status</p>
+            </div>
 
+        </div>
+
+        <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4 shadow-lg">
+            <h2 class="mb-4 text-lg font-semibold text-white">Category Overview</h2>
+
+            @if (categories.length === 0) {
+            <p class="text-sm text-slate-300">No categories found.</p>
+            } @else {
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                @for (category of categories; track category.categoryId) {
+                <article class="rounded-lg border border-slate-700/80 bg-slate-950/50 p-3">
+                    <div class="flex items-center justify-between gap-2">
+                        <h3 class="font-semibold text-white">{{ category.categoryName }}</h3>
+                        <span class="rounded-full bg-cyan-500/20 px-2 py-0.5 text-xs font-semibold text-cyan-200">
+                            {{ category.enquiryCount }} enquiries
+                        </span>
+                    </div>
+
+                    <p class="mt-2 text-xs" [class.text-emerald-300]="category.isActive"
+                        [class.text-rose-300]="!category.isActive">
+                        {{ category.isActive ? 'Active' : 'Inactive' }}
+                    </p>
+
+                    <button type="button" (click)="viewEnquiries(category)"
+                        class="mt-3 rounded-md border border-violet-400/50 bg-violet-500/20 px-3 py-1.5 text-xs font-semibold text-violet-100 transition hover:bg-violet-500/35">
+                        View Enquiries
+                    </button>
+                </article>
+                }
+            </div>
+            }
+        </div>
+    </div>
+
+    @if (selectedCategory) {
+    <div class="mx-auto mt-4 max-w-7xl rounded-xl border border-slate-600/40 bg-slate-900/55 p-4">
+        <div class="mb-3 flex items-center justify-between">
+            <h3 class="text-base font-semibold text-white">
+                Enquiries in "{{ selectedCategory.categoryName }}"
+            </h3>
+            <button type="button" (click)="clearSelectedCategory()"
+                class="rounded-md border border-slate-500/60 px-2 py-1 text-xs text-slate-200 hover:bg-slate-700/60">Close</button>
+        </div>
+
+        @if (selectedCategoryEnquiries.length === 0) {
+        <p class="text-sm text-slate-400">No enquiries found in this category.</p>
+        } @else {
+        <div class="space-y-2">
+            @for (enquiry of selectedCategoryEnquiries; track enquiry.id ?? $index) {
+            <div class="rounded-lg border border-slate-700/50 px-3 py-2">
+                <div class="font-medium">{{ enquiry.customerName || enquiry.name || 'Customer' }}</div>
+                <div class="text-sm text-slate-400">
+                    {{ enquiry.enquiryType || enquiry.subject || 'Enquiry' }}
+                </div>
+            </div>
+            }
+        </div>
+        }
+    </div>
+    }
+</section>
