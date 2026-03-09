@@ -31,7 +31,7 @@
                 </li>
                 }
 
-                @if (isUser() || !isLoggedIn()) {
+                @if (isUser()) {
                 <li>
                     <a routerLink="submit-enquiry" class="nav-link">
                         Submit Enquiry
@@ -91,7 +91,7 @@
                         Enquiry List
                     </a>
                     }
-                    @if (isUser() || !isLoggedIn()) {
+                    @if (isUser()) {
                     <a routerLink="submit-enquiry" class="mt-1 block mobile-link">
                         Submit Enquiry
                     </a>

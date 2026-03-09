@@ -13,6 +13,7 @@ import { StatusSummary } from './pages/dashboard/status-summary/status-summary';
 import { CategorySummary } from './pages/dashboard/category-summary/category-summary';
 import { RecentEnquiries } from './pages/dashboard/recent-enquiries/recent-enquiries';
 import { EnquiryStatus } from './pages/enquiry-status/enquiry-status';
+import { submitEnquiryGuard } from './guards/submit-enquiry.guard';
 
 export const routes: Routes = [
 
@@ -38,7 +39,8 @@ export const routes: Routes = [
         component: Login
     }, {
         path: 'submit-enquiry',
-        component: SubmitEnquiry
+        component: SubmitEnquiry,
+        canActivate: [submitEnquiryGuard]
     }, {
         path: 'forgot-password',
         component: ForgetPassword

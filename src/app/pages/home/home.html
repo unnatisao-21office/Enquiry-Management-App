@@ -15,10 +15,17 @@
 					managers who need clarity without chaos.
 				</p>
 				<div class="mt-8 flex flex-wrap gap-4">
+					@if (isUserLoggedIn()) {
 					<button routerLink="/submit-enquiry"
 						class="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5">
 						Start New Enquiry
 					</button>
+					} @else {
+					<button routerLink="/login"
+						class="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5">
+						Login to Submit Enquiry
+					</button>
+					}
 					<button routerLink="/dashboard"
 						class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60">
 						View Dashboard

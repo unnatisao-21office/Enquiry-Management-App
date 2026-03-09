@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,7 @@ import { Router, RouterLink } from "@angular/router";
   styleUrl: './home.css',
 })
 export class Home {
-  constructor(private readonly router: Router) { }
-
-  public navigateToSubmitEnquiry() {
-    this.router.navigate(['/submit-enquiry']);
-  }
-  public navigateToDashboard() {
-    this.router.navigate(['/dashboard']);
+  public isUserLoggedIn(): boolean {
+    return localStorage.getItem('enquiryApp') === 'user';
   }
 }
