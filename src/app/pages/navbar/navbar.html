@@ -13,6 +13,7 @@
                         Home
                     </a>
                 </li>
+                @if (isAdmin()) {
                 <li>
                     <a routerLink="dashboard" class="nav-link">
                         Dashboard
@@ -28,16 +29,22 @@
                         Enquiry List
                     </a>
                 </li>
-                <li>
-                    <a routerLink="enquiry-status" class="nav-link">
-                        Enquiry Status
-                    </a>
-                </li>
+                }
+
+                @if (isUser()) {
                 <li>
                     <a routerLink="submit-enquiry" class="nav-link">
                         Submit Enquiry
                     </a>
                 </li>
+                }
+                @if (isUser()) {
+                <li>
+                    <a routerLink="enquiry-status" class="nav-link">
+                        Enquiry Status
+                    </a>
+                </li>
+                }
                 <li>
                     @if (!isLoggedIn()) {
                     <a routerLink="login" class="nav-link nav-link--accent">
@@ -73,6 +80,7 @@
                     <a routerLink="home" class="mobile-link">
                         Home
                     </a>
+                    @if (isAdmin()) {
                     <a routerLink="dashboard" class="mt-1 block mobile-link">
                         Dashboard
                     </a>
@@ -82,12 +90,17 @@
                     <a routerLink="enquiry-list" class="mt-1 block mobile-link">
                         Enquiry List
                     </a>
-                    <a routerLink="enquiry-status" class="mt-1 block mobile-link">
-                        Enquiry Status
-                    </a>
+                    }
+                    @if (isUser()) {
                     <a routerLink="submit-enquiry" class="mt-1 block mobile-link">
                         Submit Enquiry
                     </a>
+                    }
+                    @if (isUser()) {
+                    <a routerLink="enquiry-status" class="mt-1 block mobile-link">
+                        Enquiry Status
+                    </a>
+                    }
                     @if (!isLoggedIn()) {
                     <a routerLink="login" class="mt-1 block mobile-link mobile-link--accent">
                         Login

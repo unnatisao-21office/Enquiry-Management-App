@@ -1,34 +1,19 @@
 {
   "employee": [
     {
-      "id": "6597",
+      "id": "9fe6",
       "enquiryId": 1,
       "customerName": "Unnati Sao",
-      "customerEmail": "unnatsao@cbnits.com",
+      "customerEmail": "unnati.sao@cbnits.com",
       "customerPhone": "9876543210",
-      "message": "i have an issue need to resolve,i have an issue need to resolve,i have an issue need to resolve,i have an issue need to resolve",
-      "categoryId": "1",
-      "statusId": "2",
-      "enquiryType": "Support",
-      "isConverted": true,
-      "enquiryDate": "2026-02-05T14:44",
-      "followUpDate": "2026-02-27T14:43",
-      "feedback": "i have an issue need to resolvei have an issue need to resolvei have an issue need to resolvei have an issue need to resolve"
-    },
-    {
-      "id": "352c",
-      "enquiryId": 2,
-      "customerName": "Unnati Sao",
-      "customerEmail": "unnati.o@cbnits.com",
-      "customerPhone": "9876543210",
-      "message": "i dont know",
-      "categoryId": "1",
-      "statusId": "3",
+      "message": "http://localhost:4200/submit-enquiry",
+      "categoryId": "2",
+      "statusId": "1",
       "enquiryType": "Service",
       "isConverted": true,
-      "enquiryDate": "2026-02-02T13:11",
-      "followUpDate": "2026-02-24T13:11",
-      "feedback": "ok bye"
+      "enquiryDate": "2026-03-02T18:38",
+      "followUpDate": "2026-03-19T16:38",
+      "feedback": ""
     }
   ],
   "categories": [
@@ -76,5 +61,6 @@
       "isActive": true,
       "id": "6a8c"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
