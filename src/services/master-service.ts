@@ -18,7 +18,15 @@ export class MasterService {
   }
 
   public saveCategory(obj: ICategoryModel) {
-    return this.http.post("http://localhost:3000/categories", obj);
+    return this.http.post<ICategoryModel>("http://localhost:3000/categories", obj);
+  }
+
+  public updateCategory(id: string, obj: ICategoryModel) {
+    return this.http.put<ICategoryModel>(`http://localhost:3000/categories/${id}`, obj);
+  }
+
+  public deleteCategory(id: string) {
+    return this.http.delete<void>(`http://localhost:3000/categories/${id}`);
   }
 
   public saveEnquiry(obj: any) {
