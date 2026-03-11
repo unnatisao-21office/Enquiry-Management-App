@@ -14,9 +14,9 @@ import { CategorySummary } from './pages/dashboard/category-summary/category-sum
 import { RecentEnquiries } from './pages/dashboard/recent-enquiries/recent-enquiries';
 import { EnquiryStatus } from './pages/enquiry-status/enquiry-status';
 import { submitEnquiryGuard } from './guards/submit-enquiry.guard';
+import { adminCategoryGuard } from './guards/admin-category.guard';
 
 export const routes: Routes = [
-
     {
         path: '',
         redirectTo: 'home',
@@ -30,7 +30,8 @@ export const routes: Routes = [
         component: EnquiryList
     }, {
         path: 'enquiry-category',
-        component: EnquiryCategory
+        component: EnquiryCategory,
+        canActivate: [adminCategoryGuard]
     }, {
         path: 'dashboard',
         component: Dashboard

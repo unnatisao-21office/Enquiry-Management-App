@@ -12,10 +12,59 @@
         </div>
 
         <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4 shadow-lg">
-            <h2 class="mb-4 text-lg font-semibold text-white">Category Overview</h2>
-        <div class="rounded-xl border border-slate-700/50 bg-slate-950/50 p-4 shadoq-lg">
-          <h2 class="mb-4 text-lg font-semibold text-white">Create Category</h2>
+            <h2 class="mb-4 text-lg font-semibold text-white">
+                {{ editingCategory ? 'Edit Category' : 'Create Category' }}
+            </h2>
+
+            <form class="grid gap-3 sm:grid-cols-2" (ngSubmit)="onSubmitCategory()">
+                <div>
+                    <label for="categoryName"
+                        class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-300">
+                        Category Name
+                    </label>
+                    <input id="categoryName" name="categoryName" type="text" [(ngModel)]="categoryForm.categoryName"
+                        class="w-full rounded-md border border-slate-600 bg-slate-950/70 px-3 py-2 text-sm text-white outline-none transition focus:border-cyan-400"
+                        placeholder="Enter category name" />
+                </div>
+
+                <div>
+                    <label for="isActive"
+                        class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-300">
+                        Status
+                    </label>
+                    <select id="isActive" name="isActive" [(ngModel)]="categoryForm.isActive"
+                        class="w-full rounded-md border border-slate-600 bg-slate-950/70 px-3 py-2 text-sm text-white outline-none transition focus:border-cyan-400">
+                        <option [ngValue]="true">Active</option>
+                        <option [ngValue]="false">Inactive</option>
+                    </select>
+                </div>
+
+                @if (formError) {
+                <p class="sm:col-span-2 text-sm text-rose-300">{{ formError }}</p>
+                }
+
+                @if (successMessage) {
+                <p class="sm:col-span-2 text-sm text-emerald-300">{{ successMessage }}</p>
+                }
+
+                <div class="sm:col-span-2 flex flex-wrap gap-2">
+                    <button type="submit" [disabled]="isSubmitting"
+                        class="rounded-md border border-emerald-400/50 bg-emerald-500/20 px-3 py-2 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-500/35 disabled:cursor-not-allowed disabled:opacity-60">
+                        {{ editingCategory ? 'Update Category' : 'Create Category' }}
+                    </button>
+
+                    @if (editingCategory) {
+                    <button type="button" (click)="cancelEdit()"
+                        class="rounded-md border border-slate-500/70 bg-slate-700/40 px-3 py-2 text-sm font-semibold text-slate-100 transition hover:bg-slate-700/65">
+                        Cancel
+                    </button>
+                    }
+                </div>
+            </form>
         </div>
+
+        <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-4 shadow-lg">
+            <h2 class="mb-4 text-lg font-semibold text-white">Category Overview</h2>
             @if (categories.length === 0) {
             <p class="text-sm text-slate-300">No categories found.</p>
             } @else {
@@ -34,10 +83,20 @@
                         {{ category.isActive ? 'Active' : 'Inactive' }}
                     </p>
 
-                    <button type="button" (click)="viewEnquiries(category)"
-                        class="mt-3 rounded-md border border-violet-400/50 bg-violet-500/20 px-3 py-1.5 text-xs font-semibold text-violet-100 transition hover:bg-violet-500/35">
-                        View Enquiries
-                    </button>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <button type="button" (click)="viewEnquiries(category)"
+                            class="rounded-md border border-violet-400/50 bg-violet-500/20 px-3 py-1.5 text-xs font-semibold text-violet-100 transition hover:bg-violet-500/35">
+                            View Enquiries
+                        </button>
+                        <button type="button" (click)="editCategory(category)"
+                            class="rounded-md border border-cyan-400/50 bg-cyan-500/20 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition hover:bg-cyan-500/35">
+                            Edit
+                        </button>
+                        <button type="button" (click)="deleteCategory(category)"
+                            class="rounded-md border border-rose-400/50 bg-rose-500/20 px-3 py-1.5 text-xs font-semibold text-rose-100 transition hover:bg-rose-500/35">
+                            Delete
+                        </button>
+                    </div>
                 </article>
                 }
             </div>
