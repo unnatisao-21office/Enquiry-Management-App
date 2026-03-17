@@ -26,6 +26,13 @@ type EnquiryRow = {
   feedback: string;
 };
 
+type EnquiryFilters = {
+  search: string;
+  statusId: string;
+  categoryId: string;
+  converted: 'all' | 'yes' | 'no';
+};
+
 @Component({
   selector: 'app-enquiry-status',
   standalone: true,
@@ -34,7 +41,7 @@ type EnquiryRow = {
   styleUrl: './enquiry-status.css',
 })
 export class EnquiryStatus implements OnInit {
-  private readonly masterService = inject(MasterService);
+  private readonly masterService: MasterService = inject(MasterService);
 
   public role: AppRole = null;
   public isLoading = false;
@@ -51,7 +58,7 @@ export class EnquiryStatus implements OnInit {
   public categoryMap: Record<number, string> = {};
   public statusMap: Record<number, string> = {};
 
-  public filters = {
+  public filters: EnquiryFilters = {
     search: '',
     statusId: 'all',
     categoryId: 'all',
