@@ -44,8 +44,9 @@ export class EnquiryStatus implements OnInit {
   private readonly masterService: MasterService = inject(MasterService);
 
   public role: AppRole = null;
-  public isLoading = false;
-  public errorMessage = '';
+  public isLoading: boolean = false;
+  public searchText: string = '';
+  public errorMessage: string = '';
 
   public categories: ICategoryModel[] = [];
   public statuses: IStatusModel[] = [];
