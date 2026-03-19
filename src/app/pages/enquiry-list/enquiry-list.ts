@@ -34,8 +34,8 @@ export class EnquiryList implements OnInit {
   public getAllEnquiriesList: EnquiryListItem[] = [];
   public categoryMap: Record<number, string> = {};
   public statusMap: Record<number, string> = {};
-  public searchText = '';
-  public isLoading = false;
+  public searchText: string = '';
+  public isLoading: boolean = false;
 
   public ngOnInit(): void {
     this.loadPageData();
