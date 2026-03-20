@@ -15,6 +15,7 @@ import { RecentEnquiries } from './pages/dashboard/recent-enquiries/recent-enqui
 import { EnquiryStatus } from './pages/enquiry-status/enquiry-status';
 import { submitEnquiryGuard } from './guards/submit-enquiry.guard';
 import { adminCategoryGuard } from './guards/admin-category.guard';
+import { enquiryStatusGuard } from './guards/enquiry-status.guard';
 
 export const routes: Routes = [
     {
@@ -65,7 +66,8 @@ export const routes: Routes = [
         component: RecentEnquiries
     }, {
         path: 'enquiry-status',
-        component: EnquiryStatus
+        component: EnquiryStatus,
+        canActivate: [enquiryStatusGuard]
     }
 
 ];
